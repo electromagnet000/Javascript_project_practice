@@ -23,7 +23,7 @@ function changeBackgroundColor(element) {
 function deleteRecipe(index_id) {
     for (let i = 0; i < recipes.length; i++) {
         if (recipes[i].id == index_id) {
-            recipes.splice(recipes[i], 1);
+            recipes.splice(i, 1);
             return resetIndex();
         }
     };
