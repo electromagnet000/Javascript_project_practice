@@ -1,0 +1,80 @@
+
+      body {
+        color: black;
+        font-family: sans-serif;
+      }
+      h1 {
+        font-size: 20px;
+      }
+
+      .center {
+        display: flex;
+        justify-content:center;
+      }
+
+      form {
+        display:grid;
+        grid-template-auto: 500px;
+        justify-content: center;
+        row-gap: 10px;
+        margin: 50px;
+      }
+
+      form input{
+        border: solid 1px black;
+        background-color: white;
+      }
+
+      form label{
+
+        display: flex;
+        font-size: 14px;
+        justify-content: center;
+      }
+
+      .submit {
+        background-color: black;
+        color: white;
+        transition: 0.5s;
+
+      }
+
+      .submit:active {
+        color:black;
+        background-color:white;
+        transition: 0.01s;
+
+      }
+
+      .recipe_Area {
+        display: grid;
+        grid-template-columns: 200px 200px 200px;
+        justify-content: center;
+      }
+
+
+      .recipe-item {
+            background-color: transparent;
+            margin: 20px;
+            overflow: hidden;
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 10px;
+            display: grid;
+            grid-template-columns: 150px;
+            justify-content: center;
+            transition: 0.5s;
+
+      }
+
+      .change_button {
+        background-color: black;
+        color: white;
+        border: 1px solid black;
+      }
+
+      .change_button:active {
+        color:black;
+        background-color:white;
+        transition: 0.01s;
+      }

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Recipe creator</title>
+    <link rel="stylesheet" href="static/style.css">
+
+  </head>
+
+<body>
+<h1 class="center">Add A Recipe</h1>
+<form id="recipe_form">
+  <label for="recipe_Name">Recipe Name</label>
+  <input type="text" name="recipe_Name" id="recipe_Name" placeholder="Enter Recipe Name">
+  <textarea name="ingredients" id="ingredients" rows="4" cols="50" placeholder="List ingredients"></textarea>
+  <textarea name="steps" id="steps" rows="4" cols="50" placeholder="Method/steps"></textarea>
+
+    <input class="submit" type="submit" id="submit" value="Add Recipe">
+</form>
+
+<h2 class="center">Your Recipes</h2>
+
+<div class="recipe_Area" id="recipe_Area">
+</div>
+
+
+<script src="static/scripts.js"></script>
+
+</body>
+</html>
+
