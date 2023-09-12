@@ -10,9 +10,6 @@ let displayArea = document.getElementById('recipe_Area')
 // Recipe list
 let recipes = [];
 
-// used to index divs
-let x = 0;
-
 // Changes background color on hover
 function changeBackgroundColor(element) {
     var randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
@@ -20,11 +17,15 @@ function changeBackgroundColor(element) {
 }
 
 // Deletes recipe
-function deleteRecipe(index_id) {
+function deleteRecipe(index) {
     for (let i = 0; i < recipes.length; i++) {
-        if (recipes[i].id == index_id) {
+        console.log(recipes[i].id);
+        console.log(index);
+        console.log(recipes)
+        if (recipes[i].id == index) {
             recipes.splice(i, 1);
-            return resetIndex();
+            console.log("delete_works");
+            console.log(recipes)
         }
     };
 }
@@ -34,7 +35,7 @@ function deleteRecipe(index_id) {
 function displayRecipe(recipe) {
   let recipeDiv = document.createElement("div");
   recipeDiv.classList.add("recipe-item");
-  recipeDiv.id = "recipe-item-" + x;
+  recipeDiv.id = recipe.id;
 
   // Create elements for displaying recipe details
   let recipeNameElement = document.createElement("h2");
@@ -73,12 +74,6 @@ function displayRecipe(recipe) {
 
   displayArea.appendChild(recipeDiv);
 
-  x++;
-}
-
-function resetIndex() {
-    x = 0;
-    displayRecipes();
 }
 
 
@@ -90,6 +85,7 @@ recipeForm.addEventListener("submit", function(event) {
   let enteredSteps = steps.value;
 
   let newRecipe = {
+    id : addIndex(),
     name: enteredRecipeName,
     ingredients: enteredIngredients,
     steps: enteredSteps
@@ -104,6 +100,8 @@ recipeForm.addEventListener("submit", function(event) {
 
   // Call the displayRecipes function to display all recipes
   resetIndex();
+
+  console.log("add_works");
 });
 
 function displayRecipes() {
@@ -112,7 +110,19 @@ function displayRecipes() {
 
   // Loop through the recipes array and display each recipe
   recipes.forEach((recipe) => {
-    x += 1;
+
     displayRecipe(recipe);
   });
 }
+
+function addIndex() {
+    i = recipes.length + 1;
+    z = "recipe-item-" + i;
+    return z;
+}
+
+
+function resetIndex() {
+    displayRecipes();
+}
+
